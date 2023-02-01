@@ -34,7 +34,7 @@ export function Post({author, publishedAt, content}){
 
     };
 
-    function handleNewCommentChange(){
+    function handleNewCommentChange(event){
         setNewCommentText(event.target.value);
     };
 
@@ -65,7 +65,7 @@ export function Post({author, publishedAt, content}){
             <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
                 <strong>Deixe seu feedback</strong>
 
-                <textarea name="comment" placeholder='Deixe um comentário' value={newCommentText} onChance={handleNewCommentChange()}/>
+                <textarea name="comment" placeholder='Deixe um comentário' value={newCommentText} onChance={() => handleNewCommentChange()}/>
                 
                 <footer>
                     <button type="submit">Publicar</button>
