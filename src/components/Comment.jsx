@@ -3,15 +3,15 @@ import { Trash } from 'phosphor-react';
 import { Avatar } from './Avatar';
 import styles from './Comment.module.css';
 
-export function Comment (props) {
+export function Comment ({src, name, content}) {
     return(
         <div className={styles.Comment}>
-            <Avatar hasBorder={false} src={props.src}/>
+            <Avatar hasBorder={false} src={src}/>
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header>    
                         <div className={styles.authorAndTime}>
-                            <strong>{props.name}</strong>
+                            <strong>{name}</strong>
                             <time dataTime="2023-01-25 17:10:40">Cerca de 1h atrás</time>
                         </div>
 
@@ -20,7 +20,7 @@ export function Comment (props) {
                         </button>
                     </header>
 
-                    <p>{props.comment}</p>
+                    <p>{content}</p>
                 </div>
                 <footer>
                     <button>
