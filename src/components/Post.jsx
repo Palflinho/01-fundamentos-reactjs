@@ -24,6 +24,8 @@ export function Post({author, publishedAt, content}){
         addSuffix: true,
     })
 
+    const isNewCommentEmpty = newCommentText.lenght == 0;
+
     function handleCreateNewComment(){
         event.preventDefault()
 
@@ -33,7 +35,7 @@ export function Post({author, publishedAt, content}){
     }
 
     function handleNewCommentChange(){
-        event.target.setCustomValidity('1')
+        event.target.setCustomValidity('')
         setNewCommentText(event.target.value)
     }
 
@@ -84,7 +86,7 @@ export function Post({author, publishedAt, content}){
                 />
                 
                 <footer>
-                    <button type="submit">Publicar</button>
+                    <button type="submit" disabled={isNewCommentEmpty}>Publicar</button>
                 </footer>
               
             </form>
